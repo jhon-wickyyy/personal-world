@@ -1,0 +1,108 @@
+/* Home page chrome: the only UI floating over the world. */
+
+.home-chrome {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: var(--z-world-ui);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--page-gutter) calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+  pointer-events: none;
+}
+
+.home-chrome > * {
+  pointer-events: auto;
+}
+
+.home-chrome__intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 36ch;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-bg) 72%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.home-chrome__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.home-chrome__hint {
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  color: var(--color-text-faint);
+}
+
+.home-chrome__reset {
+  margin-left: auto;
+  background: color-mix(in srgb, var(--color-bg) 72%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 767px) {
+  /* the runtime owns the bottom of the screen on mobile (camera dock):
+     keep the title and the reset control clear of both the header and the dock */
+  .home-chrome {
+    display: grid;
+    justify-items: end;
+    gap: var(--space-2);
+    inset: auto 0 auto 0;
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    padding: 0 var(--page-gutter);
+  }
+
+  .home-chrome__intro {
+    justify-self: start;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .home-chrome__name {
+    font-size: var(--text-md);
+  }
+
+  .home-chrome__hint {
+    display: none;
+  }
+
+  .home-chrome__reset {
+    min-height: 34px;
+    font-size: var(--text-xs);
+  }
+}
+
+
+.home-intro-skip {
+  position: fixed;
+  top: calc(var(--header-height) + var(--space-2));
+  right: var(--page-gutter);
+  z-index: calc(var(--z-world-ui) + 1);
+  min-height: 34px;
+  padding: 0 var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  color: var(--color-text-muted);
+  backdrop-filter: blur(10px);
+  font: inherit;
+  font-size: var(--text-xs);
+  cursor: pointer;
+}
+
+.home-intro-skip:hover {
+  color: var(--color-text);
+  border-color: var(--color-red);
+}
+
+@media (max-width: 767px) {
+  .home-intro-skip {
+    top: calc(var(--header-height) + var(--space-2));
+    right: var(--space-3);
+  }
+}

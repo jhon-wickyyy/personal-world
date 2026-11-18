@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# build output (Vercel / Netlify build this themselves)
+dist/
+.vite/
+*.tsbuildinfo
+
+# local tooling artefacts
+shots/server.log
+shots/verify-*.log
+tools/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# archives
+*.zip

@@ -1,0 +1,422 @@
+/* =============================================================================
+   Phase 01.5 additions: Architecture editorial portfolio + Travel video hero.
+   Appended so the existing page layouts stay untouched.
+   ========================================================================== */
+
+/* ------------------------------------------------------ architecture */
+
+.arch {
+  --work-accent: var(--color-blue);
+}
+
+.arch__head {
+  display: grid;
+  gap: var(--space-2);
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.arch__title {
+  font-size: var(--text-4xl);
+}
+
+.arch__tagline {
+  max-width: 34rem;
+}
+
+.arch__layout {
+  display: grid;
+  gap: var(--space-6);
+  margin-top: var(--space-6);
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem);
+  align-items: start;
+}
+
+/* ---- the plate */
+
+.arch__plate {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.arch__plate-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius-lg);
+}
+
+.arch__plate-button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+.arch__plate-empty {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  border: 1px dashed var(--color-line-strong);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(120% 100% at 50% 0%, color-mix(in srgb, var(--work-accent) 16%, transparent), transparent 68%),
+    linear-gradient(
+      to bottom right,
+      color-mix(in srgb, var(--color-surface) 55%, transparent),
+      color-mix(in srgb, var(--color-bg-sunken) 45%, transparent)
+    );
+}
+
+/* a quiet architectural mark instead of a big empty rectangle */
+.arch__plate-mark {
+  width: 96px;
+  height: 56px;
+  border: 1px solid var(--color-line-strong);
+  border-radius: 3px;
+  position: relative;
+  opacity: 0.75;
+}
+
+.arch__plate-mark::before,
+.arch__plate-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-top: 1px solid var(--color-line-strong);
+  transform-origin: top left;
+}
+
+.arch__plate-mark::before {
+  transform: rotate(-24deg) scaleX(1.05);
+}
+
+.arch__plate-mark::after {
+  transform: rotate(24deg) scaleX(1.05);
+  transform-origin: top right;
+}
+
+.arch__plate-role {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.arch__plate-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+}
+
+.arch__plate-foot {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.arch__plate-name {
+  color: var(--color-text-muted);
+}
+
+/* ---- the index */
+
+.arch__index {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  padding-top: var(--space-1);
+}
+
+.arch__index-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.arch__count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.arch__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+}
+
+.arch__item {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  grid-template-areas:
+    'no label'
+    'no role';
+  gap: 0 var(--space-2);
+  width: 100%;
+  padding: var(--space-3) var(--space-2);
+  border: 0;
+  border-bottom: 1px solid var(--color-line);
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.arch__item:hover {
+  background: var(--color-red-wash);
+}
+
+.arch__item.is-current {
+  background: color-mix(in srgb, var(--color-surface) 80%, transparent);
+  box-shadow: inset 2px 0 0 var(--work-accent);
+}
+
+.arch__item-no {
+  grid-area: no;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  padding-top: 0.25rem;
+}
+
+.arch__item-label {
+  grid-area: label;
+  font-family: var(--font-display);
+  font-size: var(--text-md);
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arch__item-role {
+  grid-area: role;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.arch__intro {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+  max-width: var(--measure);
+}
+
+/* ---- detail sheet */
+
+.arch__media-spec {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.arch__media-group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.arch__media-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(11rem, 100%), 1fr));
+}
+
+@media (max-width: 1023px) {
+  .arch__layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .arch__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* --------------------------------------------------------- video hero */
+
+.video-hero {
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.video-hero__frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-sunken);
+  border: 1px solid var(--color-line);
+}
+
+.video-hero__frame--empty {
+  border-style: dashed;
+  border-color: var(--color-line-strong);
+  background:
+    radial-gradient(120% 110% at 50% 0%, color-mix(in srgb, var(--color-green) 16%, transparent), transparent 70%),
+    color-mix(in srgb, var(--color-surface) 45%, transparent);
+}
+
+.video-hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-hero__spec {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.video-hero__line {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.video-hero__tag {
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: var(--color-green-wash);
+  color: #4d5f4c;
+  letter-spacing: 0.08em;
+}
+
+.video-hero__glyph {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--color-line-strong);
+  position: relative;
+  opacity: 0.9;
+}
+
+.video-hero__glyph::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-left: 12px solid var(--color-text-faint);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  transform: translateX(3px);
+}
+
+.video-hero__caption {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+}
+
+.video-hero__corner {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--color-text-faint);
+}
+
+.video-hero__meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+/* controls: only rendered for a real film */
+.video-hero__play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(62, 58, 55, 0.42);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.video-hero__play > span {
+  width: 0;
+  height: 0;
+  border-left: 16px solid #f7f4ee;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transform: translateX(3px);
+}
+
+.video-hero__play:focus-visible {
+  outline: 2px solid var(--color-cream, #f7f4ee);
+  outline-offset: 3px;
+}
+
+.video-hero__mute {
+  position: absolute;
+  right: var(--space-3);
+  top: var(--space-3);
+  min-height: 30px;
+  padding: 0 var(--space-3);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(62, 58, 55, 0.42);
+  backdrop-filter: blur(6px);
+  color: #f7f4ee;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .video-hero__play {
+    width: 52px;
+    height: 52px;
+  }
+
+  /* a 21:9 plate is unreadable on a phone: keep it tall enough to matter */
+  .video-hero__frame {
+    min-height: 220px;
+  }
+}

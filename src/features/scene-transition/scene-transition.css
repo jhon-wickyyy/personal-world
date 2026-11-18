@@ -1,0 +1,129 @@
+.scene-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: none;
+  overflow: hidden;
+  pointer-events: auto;
+  visibility: hidden;
+  perspective: 1200px;
+  background: var(--color-bg);
+}
+
+.scene-transition__iris {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  --transition-hole: 0px;
+  -webkit-mask-image: radial-gradient(circle at var(--transition-origin-x, 50%) var(--transition-origin-y, 50%), transparent var(--transition-hole), #000 calc(var(--transition-hole) + 1px));
+  mask-image: radial-gradient(circle at var(--transition-origin-x, 50%) var(--transition-origin-y, 50%), transparent var(--transition-hole), #000 calc(var(--transition-hole) + 1px));
+  background:
+    radial-gradient(circle at var(--transition-origin-x, 50%) var(--transition-origin-y, 50%), rgba(247, 244, 238, 0.98) 0 8%, rgba(185, 133, 135, 0.42) 18%, transparent 34%),
+    linear-gradient(138deg, #e9e5de 0%, #d8d8d0 42%, #879ead 100%);
+  transform-style: preserve-3d;
+}
+
+.scene-transition__iris::before,
+.scene-transition__iris::after {
+  content: '';
+  position: absolute;
+  inset: -18%;
+  pointer-events: none;
+  opacity: 0.36;
+}
+
+.scene-transition__iris::before {
+  background-image: linear-gradient(rgba(98, 93, 89, 0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(98, 93, 89, 0.12) 1px, transparent 1px);
+  background-size: 68px 68px;
+  transform: perspective(900px) rotateX(58deg) rotateZ(-18deg) scale(1.35);
+  transform-origin: center;
+  mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 76%, transparent);
+}
+
+.scene-transition__iris::after {
+  background: radial-gradient(ellipse at center, transparent 18%, rgba(98, 93, 89, 0.12) 72%, rgba(98, 93, 89, 0.24));
+}
+
+.scene-transition__fold {
+  position: absolute;
+  width: min(74vw, 900px);
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(247, 244, 238, 0.66);
+  box-shadow: 0 30px 90px rgba(70, 75, 75, 0.14);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+
+.scene-transition__fold--a {
+  background: linear-gradient(135deg, rgba(185, 133, 135, 0.76), rgba(233, 229, 222, 0.22) 52%, rgba(137, 155, 136, 0.62));
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.scene-transition__fold--b {
+  width: min(54vw, 680px);
+  background: linear-gradient(145deg, rgba(135, 158, 173, 0.72), rgba(247, 244, 238, 0.18) 58%, rgba(181, 169, 181, 0.64));
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.scene-transition__portal-mark {
+  position: absolute;
+  left: var(--transition-origin-x, 50%);
+  top: var(--transition-origin-y, 50%);
+  width: clamp(100px, 18vw, 220px);
+  aspect-ratio: 0.72;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(247, 244, 238, 0.88);
+  border-radius: 50% 50% 8px 8px / 42% 42% 8px 8px;
+  box-shadow: 0 0 0 12px rgba(185, 133, 135, 0.12), 0 0 70px rgba(247, 244, 238, 0.8), inset 0 0 35px rgba(247, 244, 238, 0.56);
+  opacity: 0.62;
+}
+
+.scene-transition__portal-mark span {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(247, 244, 238, 0.52);
+  border-radius: inherit;
+}
+
+.scene-transition__portal-mark span:nth-child(2) {
+  inset: 17px;
+  opacity: 0.7;
+}
+
+.scene-transition__portal-mark span:nth-child(3) {
+  inset: 26px;
+  opacity: 0.42;
+}
+
+.scene-transition__label {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(2rem, 8vh, 5rem);
+  transform: translateX(-50%);
+  color: rgba(75, 76, 74, 0.78);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 2rem);
+  letter-spacing: 0.04em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .scene-transition__fold--a {
+    width: 112vw;
+  }
+
+  .scene-transition__fold--b {
+    width: 84vw;
+  }
+
+  .scene-transition__label {
+    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-transition { display: none !important; }
+}

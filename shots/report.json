@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-11-18T09:41:17.009Z",
+  "chromium": "Chrome/157.0.8103.78",
+  "results": [
+    {
+      "id": "H1",
+      "name": "world is inline SVG in its own namespace",
+      "ok": true,
+      "detail": "{\"ns\":\"http://www.w3.org/2000/svg\",\"imgTags\":0,\"portals\":7,\"mechanisms\":4,\"box\":[1600,1000],\"bodyOverflowY\":\"visible\",\"inline\":true}"
+    },
+    {
+      "id": "H2",
+      "name": "world fills the viewport on /",
+      "ok": true,
+      "detail": "1600x1000"
+    },
+    {
+      "id": "H3",
+      "name": "frozen inventory intact (7 portals / 4 mechanisms)",
+      "ok": true,
+      "detail": "7/4"
+    },
+    {
+      "id": "H4",
+      "name": "a real click on a mechanism opens its bridge",
+      "ok": true,
+      "detail": "{\"open\":true,\"opacity\":1}"
+    },
+    {
+      "id": "H4b",
+      "name": "character walks across the open bridge",
+      "ok": true,
+      "detail": "{\"walking\":true,\"transform\":\"translate(570.84 465.42)\",\"bridgeOpen\":true,\"portalActive\":false}"
+    },
+    {
+      "id": "H5",
+      "name": "reaching a portal navigates with React Router",
+      "ok": true,
+      "detail": "/about"
+    },
+    {
+      "id": "H6",
+      "name": "returning to / restores the solved bridge",
+      "ok": true,
+      "detail": "{\"open\":true,\"node\":true}"
+    },
+    {
+      "id": "R1",
+      "name": "/architecture renders one main, one h1, nav intact",
+      "ok": true,
+      "detail": "{\"main\":1,\"h1\":\"Architecture\",\"pending\":4,\"nav\":6}"
+    },
+    {
+      "id": "R2",
+      "name": "/travel renders one main, one h1, nav intact",
+      "ok": true,
+      "detail": "{\"main\":1,\"h1\":\"Travel\",\"pending\":5,\"nav\":6}"
+    },
+    {
+      "id": "R3",
+      "name": "/research renders one main, one h1, nav intact",
+      "ok": true,
+      "detail": "{\"main\":1,\"h1\":\"Research\",\"pending\":4,\"nav\":6}"
+    },
+    {
+      "id": "R4",
+      "name": "/fashion renders one main, one h1, nav intact",
+      "ok": true,
+      "detail": "{\"main\":1,\"h1\":\"Fashion\",\"pending\":5,\"nav\":6}"
+    },
+    {
+      "id": "R5",
+      "name": "/nowhere renders one main, one h1, nav intact",
+      "ok": true,
+      "detail": "{\"main\":1,\"h1\":\"This path does not exist.\",\"pending\":0,\"nav\":6}"
+    },
+    {
+      "id": "M1",
+      "name": "mobile uses a camera crop, not the full world",
+      "ok": true,
+      "detail": "[624.41,175,351.18,760]"
+    },
+    {
+      "id": "M2",
+      "name": "mobile keeps the camera dock and 44px targets",
+      "ok": true,
+      "detail": "min=44"
+    },
+    {
+      "id": "M3",
+      "name": "mobile work page fits without horizontal overflow",
+      "ok": true,
+      "detail": "{\"overflowX\":false,\"h1\":\"Architecture\",\"pending\":4,\"frames\":0}"
+    },
+    {
+      "id": "E1",
+      "name": "no console errors across all routes",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "shots": [
+    "shots/01-home-desktop.png",
+    "shots/02-about.png",
+    "shots/10-home-puzzle-open.png",
+    "shots/03-architecture.png",
+    "shots/04-travel.png",
+    "shots/05-research.png",
+    "shots/06-fashion.png",
+    "shots/07-404.png",
+    "shots/08-home-mobile.png",
+    "shots/09-about-mobile.png",
+    "shots/11-architecture-mobile.png"
+  ]
+}

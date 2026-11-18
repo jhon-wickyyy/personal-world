@@ -1,0 +1,56 @@
+/* The Home World host fills the viewport on "/" and sits under the fixed header. */
+.home-world {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-world);
+  background: var(--color-bg);
+}
+
+/* The module sets .world-host to position:fixed/inset:0 already; keep it below
+   the site header so the nav stays clickable. */
+.home-world .world-host {
+  z-index: var(--z-world);
+}
+
+/* The module's runtime chrome (status pill, mobile dock) sits above the world
+   and below the site header. */
+.home-world :is([role='status'], .world-mobile-nav) {
+  z-index: var(--z-world-ui);
+}
+
+/* Site-level colour corrections on top of the module.
+   1. The module paints a newly unlocked path segment rose (--path-gated).
+      On this site every walkable surface is the same warm cream, so the rose
+      reads as a foreign plank. The unlock animation (bridge unfold + dash
+      sweep + portal bloom) already communicates "this just connected".
+   2. The module's route highlight (hover/focus a mechanism) is full-strength
+      Morandi Red at 18px stroke, which reads as a re-coloured walkway. We keep
+      the affordance but soften it to a tint over the cream. */
+.home-world .path-ribbon.is-gated.is-open {
+  stroke: var(--bridge, #f5f1ea);
+}
+
+.home-world .path-ribbon.is-route-highlight,
+.home-world .path-ribbon.is-gated.is-open.is-route-highlight {
+  stroke: color-mix(in srgb, var(--color-red) 48%, var(--color-cream));
+}
+
+@media (max-width: 767px) {
+  /* leave room for the fixed header when the world is centred */
+  .home-world .world-host {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Phase 04: the Fashion world is retired, but its gate lives in the frozen SVG.
+   The geometry cannot be regenerated here, so the portal is left in place and
+   made visibly dormant. Clicking it reports that the destination is pending. */
+.home-world .portal[data-portal='fashion'] {
+  opacity: 0.34;
+  filter: saturate(0.35);
+}
+
+.home-world .portal[data-portal='fashion']:hover .portal-frame,
+.home-world .portal[data-portal='fashion']:focus-visible .portal-frame {
+  filter: none;
+}

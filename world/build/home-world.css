@@ -1,0 +1,162 @@
+/* generated from src/styles/palette.mjs — do not hand-edit */
+:root {
+  --morandi-red: #B98587;
+  --morandi-blue: #879EAD;
+  --morandi-green: #899B88;
+  --world-bg: #E9E5DE;
+  --world-text: #625D59;
+  --world-bg-mid: #E0DAD2;
+  --world-surface: #DBD4CA;
+  --world-cream: #F5F1EA;
+  --world-sand-light: #E6E0D8;
+  --world-sand: #CEC5B9;
+  --world-sand-dark: #B2A89B;
+  --world-rose: #B98587;
+  --world-rose-light: #D2A9AB;
+  --world-sage: #899B88;
+  --world-sage-dark: #71826F;
+  --world-sage-text: #495246;
+  --world-blue: #879EAD;
+  --world-blue-dark: #6E8492;
+  --world-lilac: #A9A0AC;
+  --world-accent: #B98587;
+  --world-accent-glow: rgba(185,133,135,0.28);
+  --world-shadow: rgba(98,93,89,0.16);
+  --world-shadow-color: #625D59;
+  --world-shadow-soft: rgba(98,93,89,0.08);
+  --world-panel: rgba(245,241,234,0.92);
+  --world-outline: rgba(98,93,89,0.14);
+  --world-text-muted: rgba(98,93,89,0.70);
+  --face-main-top: #DBD4CA;
+  --face-main-left: #CEC5B9;
+  --face-main-right: #B2A89B;
+  --face-far-top: #E6E0D8;
+  --face-far-left: #D3CCC1;
+  --face-far-right: #B8AFA2;
+  --face-deco-top: #D2D8D0;
+  --face-deco-left: #A8B4A5;
+  --face-deco-right: #8C9789;
+  --bridge: #F5F1EA;
+  --bridge-edge: #B8AEA1;
+  --mask: #B2A89B;
+  --portal-frame: #B98587;
+  --portal-inner: #F5F1EA;
+  --portal-core: #879EAD;
+  --character: #625D59;
+  --bridge-lip: #CEC5B9;
+  --tree-trunk: #93897E;
+  --mask-left: #93897E;
+  --mask-right: #78726A;
+  --mechanism-base: #899B88;
+  --mechanism-core: #F5F1EA;
+  --path: #F5F1EA;
+  --path-gated: #D2A9AB;
+}
+
+body { margin: 0; background: var(--world-bg); }
+.world { display: block; width: 100%; height: 100%; }
+.world-host { position: fixed; inset: 0; }
+
+/* semantic marker: surfaces are ground, never a click target of their own */
+.surface { pointer-events: none; }
+.bridge-lip { fill: var(--bridge-lip); }
+.upper-opening { fill: var(--world-cream); opacity: .92; }
+.walk-node { display: none; }
+.tree-trunk { fill: var(--tree-trunk); }
+.tree-crown { fill: var(--world-sage); opacity: .85; }
+
+/* faces */
+.face-top { fill: var(--face-main-top); }
+.face-left { fill: var(--face-main-left); }
+.face-right { fill: var(--face-main-right); }
+#farWorld .face-top { fill: var(--face-far-top); }
+#farWorld .face-left { fill: var(--face-far-left); }
+#farWorld .face-right { fill: var(--face-far-right); }
+#upperArchitecture .face-top, #floatingBlocks .face-top { fill: var(--face-deco-top); }
+#upperArchitecture .face-left, #floatingBlocks .face-left { fill: var(--face-deco-left); }
+#upperArchitecture .face-right, #floatingBlocks .face-right { fill: var(--face-deco-right); }
+
+/* ground bridges */
+.bridge-ground { fill: var(--bridge); stroke: var(--bridge-edge); stroke-width: 1; }
+.bridge-ground[data-gate]:not([data-gate=""]) {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .45s ease;
+}
+.bridge-ground[data-gate]:not([data-gate=""]).is-open { opacity: 1; pointer-events: auto; }
+
+/* path ribbons */
+.path-ribbon {
+  fill: none;
+  stroke: var(--path);
+  stroke-width: 18;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: .92;
+  pointer-events: none;
+}
+.path-ribbon.is-gated { opacity: 0; transition: opacity .45s ease; }
+.path-ribbon.is-gated.is-open { opacity: .92; stroke: var(--path-gated); }
+.path-ribbon.is-dim { opacity: .35; }
+
+/* portals */
+.portal { cursor: pointer; transform-box: fill-box; transform-origin: 50% 100%; }
+.portal-shadow { fill: var(--world-shadow); }
+.portal-frame { fill: var(--portal-frame); }
+.portal-inner { fill: var(--portal-inner); }
+.portal-core { fill: var(--portal-core); }
+.portal:hover .portal-frame, .portal:focus-visible .portal-frame { filter: url(#world-portal-glow); }
+.portal.is-locked { opacity: .85; }
+.portal.is-muted { opacity: .8; }
+.portal.is-active .portal-inner { fill: var(--world-cream); }
+
+/* mechanisms */
+.mechanism { cursor: pointer; transform-box: fill-box; transform-origin: 50% 100%; }
+.mechanism-shadow { fill: var(--world-shadow); }
+.mechanism-base { fill: var(--mechanism-base); }
+.mechanism-stem { fill: var(--mechanism-base); }
+.mechanism-pivot { fill: var(--world-rose-light); }
+.mechanism-core { fill: var(--mechanism-core); }
+.mechanism:hover { transform: scale(1.06); }
+.mechanism.is-solved .mechanism-core { fill: var(--world-rose-light); }
+
+/* character */
+.character-shadow { fill: var(--world-shadow); }
+.character-body, .character-leg { fill: var(--character); stroke: var(--character); }
+.character-head { fill: var(--character); }
+.character.walking .character-leg-a { animation: world-step .38s ease-in-out infinite alternate; }
+.character.walking .character-leg-b { animation: world-step .38s ease-in-out infinite alternate-reverse; }
+.character.walking #world-character-facing { animation: world-bob .38s ease-in-out infinite alternate; }
+.character.entering { opacity: 0; transition: opacity .4s ease; }
+@keyframes world-step { from { transform: translateY(0); } to { transform: translateY(-2.5px); } }
+@keyframes world-bob { from { transform: translateY(0); } to { transform: translateY(-1.5px); } }
+
+/* foreground */
+.foreground-mask polygon { stroke: none; }
+.mask-top { fill: var(--mask); }
+.mask-left { fill: var(--mask-left); }
+.mask-right { fill: var(--mask-right); }
+
+/* accessibility */
+.portal:focus-visible, .mechanism:focus-visible {
+  outline: none;
+  stroke: var(--world-text);
+  stroke-width: 2;
+  paint-order: stroke;
+}
+.skip-link {
+  position: absolute; left: 12px; top: 12px;
+  transform: translateY(-160%);
+  padding: 8px 14px; border-radius: 8px;
+  background: var(--world-cream); color: var(--world-text);
+  font: 500 14px/1.2 system-ui, sans-serif; text-decoration: none;
+  z-index: 10;
+}
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .character.walking .character-leg-a,
+  .character.walking .character-leg-b,
+  .character.walking #world-character-facing { animation: none; }
+  * { transition-duration: .01ms !important; }
+}

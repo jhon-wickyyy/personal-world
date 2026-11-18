@@ -1,0 +1,117 @@
+/* =============================================================================
+   Architecture transition scene (Phase 04).
+   Runs inside the existing .scene-transition overlay: portal glow, camera
+   push-in (driven from the provider on .home-world), isometric building planes
+   unfolding, and a construction grid revealing underneath.
+
+   Nothing here touches the frozen SVG, the runtime camera or the character.
+   Only shown while the layer carries data-scene="architecture".
+   ========================================================================== */
+
+.transition-arch {
+  position: absolute;
+  inset: 0;
+  display: none;
+  pointer-events: none;
+  perspective: 1200px;
+  perspective-origin: var(--transition-origin-x, 50%) var(--transition-origin-y, 50%);
+}
+
+.scene-transition[data-scene='architecture'] .transition-arch[data-active='true'] {
+  display: block;
+}
+
+/* ---- portal glow: the halo that grows out of the gate it came from */
+
+.transition-arch__glow {
+  position: absolute;
+  left: var(--transition-origin-x, 50%);
+  top: var(--transition-origin-y, 50%);
+  width: 46vmax;
+  height: 46vmax;
+  margin: -23vmax 0 0 -23vmax;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      color-mix(in srgb, var(--color-cream, #f5f1ea) 92%, transparent) 0%,
+      color-mix(in srgb, var(--color-red) 22%, transparent) 34%,
+      color-mix(in srgb, var(--color-blue) 14%, transparent) 58%,
+      transparent 72%
+    );
+  filter: blur(2px);
+  will-change: transform, opacity;
+}
+
+/* ---- construction grid: the drafting sheet the building unfolds onto */
+
+.transition-arch__grid {
+  position: absolute;
+  inset: -12%;
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--color-text) 12%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--color-text) 12%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 96px 96px;
+  mask-image: radial-gradient(circle at 50% 52%, #000 22%, transparent 74%);
+  -webkit-mask-image: radial-gradient(circle at 50% 52%, #000 22%, transparent 74%);
+  will-change: transform, opacity;
+}
+
+/* ---- isometric planes: three stacked floor plates of a building */
+
+.transition-arch__planes {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+}
+
+.transition-arch__plane {
+  position: absolute;
+  width: 30vmax;
+  height: 16vmax;
+  border-radius: 3px;
+  transform: rotateX(58deg) rotateZ(-45deg);
+  border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent);
+  will-change: transform, opacity;
+}
+
+.transition-arch__plane--1 {
+  background: color-mix(in srgb, var(--color-blue) 30%, transparent);
+  translate: 0 -18%;
+}
+
+.transition-arch__plane--2 {
+  width: 24vmax;
+  height: 13vmax;
+  background: color-mix(in srgb, var(--color-green) 26%, transparent);
+  translate: 0 0;
+}
+
+.transition-arch__plane--3 {
+  width: 18vmax;
+  height: 10vmax;
+  background: color-mix(in srgb, var(--color-red) 24%, transparent);
+  translate: 0 16%;
+}
+
+/* keep the destination label legible above the artwork */
+.scene-transition[data-scene='architecture'] .scene-transition__label {
+  color: var(--color-text);
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transition-arch {
+    display: none !important;
+  }
+}

@@ -1,0 +1,116 @@
+/* =============================================================================
+   tokens.css  -  the single source of design tokens for the personal-world site.
+   The Home World module keeps its own --world-* tokens (frozen, verified by CI);
+   this file is the shell's layer. The five shared anchors MUST match the world
+   palette  -  src/styles/tokens.test.ts enforces it.
+   ========================================================================== */
+
+:root {
+  /* ---- brand anchors (brief) --------------------------------------------- */
+  --color-red: #b98587;
+  --color-blue: #879ead;
+  --color-green: #899b88;
+  --color-bg: #e9e5de;
+  --color-text: #625d59;
+  --color-lilac: #b5a9b5;
+
+  /* ---- derived surfaces --------------------------------------------------- */
+  --color-bg-elevated: #f3efe8;
+  --color-bg-sunken: #e0dad2;
+  --color-surface: #f7f4ee;
+  --color-line: rgba(98, 93, 89, 0.16);
+  --color-line-strong: rgba(98, 93, 89, 0.28);
+
+  /* ---- text --------------------------------------------------------------- */
+  --color-text-muted: rgba(98, 93, 89, 0.72);
+  --color-text-faint: rgba(98, 93, 89, 0.48);
+  --color-text-inverse: #f7f4ee;
+
+  /* ---- tints (10%) for chips, rules, gallery frames ---------------------- */
+  --color-red-wash: rgba(185, 133, 135, 0.12);
+  --color-blue-wash: rgba(135, 158, 173, 0.14);
+  --color-green-wash: rgba(137, 155, 136, 0.14);
+  --color-lilac-wash: rgba(181, 169, 181, 0.16);
+
+  /* ---- elevation ---------------------------------------------------------- */
+  --shadow-soft: 0 6px 20px rgba(98, 93, 89, 0.08);
+  --shadow-card: 0 14px 40px rgba(98, 93, 89, 0.12);
+  --shadow-modal: 0 32px 90px rgba(98, 93, 89, 0.22);
+
+  /* ---- typography --------------------------------------------------------- */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-xs: 0.75rem;    /* 12 */
+  --text-sm: 0.875rem;   /* 14 */
+  --text-base: 1rem;     /* 16 */
+  --text-md: 1.125rem;   /* 18 */
+  --text-lg: 1.375rem;   /* 22 */
+  --text-xl: 1.75rem;    /* 28 */
+  --text-2xl: 2.25rem;   /* 36 */
+  --text-3xl: clamp(2.5rem, 5vw, 3.5rem);
+  --text-4xl: clamp(3rem, 7vw, 5rem);
+
+  --leading-tight: 1.08;
+  --leading-snug: 1.25;
+  --leading-base: 1.6;
+  --leading-relaxed: 1.75;
+
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+  --tracking-caps: 0.18em;
+
+  /* ---- spacing (4-based) -------------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+
+  /* ---- layout ------------------------------------------------------------- */
+  --page-gutter: clamp(1.25rem, 5vw, 5rem);
+  --measure: 62ch;
+  --measure-narrow: 46ch;
+  --content-max: 78rem;
+  --header-height: 4.25rem;
+
+  /* ---- shape -------------------------------------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* ---- motion ------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 140ms;
+  --duration-base: 240ms;
+  --duration-slow: 520ms;
+
+  /* ---- z-index ------------------------------------------------------------ */
+  --z-world: 0;
+  --z-world-ui: 20;
+  --z-header: 40;
+  --z-modal: 60;
+  --z-toast: 80;
+}
+
+/* Breakpoints (documented here, used literally in media queries):
+   sm  480px   phone landscape / large phone
+   md  768px   tablet portrait
+   lg  1024px  tablet landscape / small laptop
+   xl  1280px  desktop                                                      */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 1ms;
+    --duration-base: 1ms;
+    --duration-slow: 1ms;
+  }
+}

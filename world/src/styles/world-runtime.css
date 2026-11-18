@@ -1,0 +1,161 @@
+/* Production interaction layer. Geometry and its generated palette live elsewhere. */
+.world-host {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--world-bg);
+}
+
+.world-host > .world {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100svh;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.world-host > .world.is-touch-camera {
+  touch-action: none;
+  cursor: grab;
+}
+
+.world-host > .world.is-touch-camera.is-dragging { cursor: grabbing; }
+
+.world-hit-target {
+  fill: transparent;
+  stroke: none;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.portal, .mechanism { outline: none; -webkit-tap-highlight-color: transparent; }
+
+.portal .portal-frame,
+.portal .portal-inner,
+.portal .portal-core,
+.mechanism .mechanism-base,
+.mechanism .mechanism-core {
+  transition: filter 220ms ease, fill 220ms ease, opacity 220ms ease;
+}
+
+.portal.is-hovered .portal-frame,
+.portal:focus-visible .portal-frame,
+.portal.is-active .portal-frame {
+  filter: url(#world-portal-glow);
+}
+
+.portal.is-hovered .portal-core,
+.portal:focus-visible .portal-core {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px var(--world-rose-light));
+}
+
+.portal.is-locked .portal-frame { opacity: .82; }
+
+.mechanism.is-hovered .mechanism-base,
+.mechanism.is-suggested .mechanism-base,
+.mechanism:focus-visible .mechanism-base {
+  filter: drop-shadow(0 0 7px var(--world-sage));
+}
+
+.mechanism.is-suggested .mechanism-core { fill: var(--world-accent); }
+
+.path-ribbon.is-route-highlight {
+  opacity: 1;
+  stroke: var(--world-accent);
+  filter: drop-shadow(0 0 3px var(--world-accent-glow));
+}
+
+.mechanism.is-pulse { animation: world-mechanism-pulse 720ms ease-in-out 2; }
+
+@keyframes world-mechanism-pulse {
+  0%, 100% { filter: none; }
+  45% { filter: drop-shadow(0 0 9px var(--world-accent)); }
+}
+
+.world-runtime-status {
+  position: fixed;
+  z-index: 30;
+  left: 50%;
+  bottom: max(22px, env(safe-area-inset-bottom));
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 11px 17px;
+  border: 1px solid var(--world-outline);
+  border-radius: 999px;
+  background: var(--world-panel);
+  color: var(--world-text);
+  box-shadow: 0 10px 28px var(--world-shadow);
+  backdrop-filter: blur(14px);
+  font: 500 13px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 10px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.world-runtime-status.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.world-mobile-nav { display: none; }
+.world-mobile-nav[hidden] { display: none !important; }
+
+.world-mobile-nav__item {
+  flex: 0 0 auto;
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--world-outline);
+  border-radius: 999px;
+  background: var(--world-panel);
+  color: var(--world-text);
+  font: 500 12px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 5px 16px var(--world-shadow-soft);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+}
+
+.world-mobile-nav__item[aria-current="true"] {
+  border-color: var(--world-sage-dark);
+  background: var(--world-sage);
+  color: var(--world-sage-text);
+}
+
+.world-mobile-nav__item:focus-visible {
+  outline: 2px solid var(--world-text);
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px), (pointer: coarse) and (orientation: portrait) {
+  .world-host > .world { width: 100%; height: 100svh; min-height: 100svh; }
+  .world-mobile-nav:not([hidden]) {
+    position: fixed;
+    z-index: 25;
+    left: 0;
+    right: 0;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 8px 14px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    mask-image: linear-gradient(to right, transparent, #000 12px, #000 calc(100% - 12px), transparent);
+  }
+  .world-mobile-nav::-webkit-scrollbar { display: none; }
+  .world-runtime-status {
+    bottom: calc(max(12px, env(safe-area-inset-bottom)) + 58px);
+    border-radius: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .world-runtime-status,
+  .portal .portal-frame,
+  .portal .portal-inner,
+  .portal .portal-core,
+  .mechanism .mechanism-base,
+  .mechanism .mechanism-core { transition-duration: .01ms !important; }
+  .mechanism.is-pulse { animation: none !important; }
+}

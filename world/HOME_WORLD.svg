@@ -1,0 +1,338 @@
+<svg id="world-home" class="world" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Personal World">
+  <defs>
+    <linearGradient id="world-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E9E5DE" />
+      <stop offset="62%" stop-color="#E0DAD2" />
+      <stop offset="100%" stop-color="#E6E0D8" />
+    </linearGradient>
+    <filter id="world-soft-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#625D59" flood-opacity="0.14" />
+    </filter>
+    <filter id="world-portal-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feDropShadow dx="0" dy="0" stdDeviation="7" flood-color="#B98587" flood-opacity="0.55" />
+    </filter>
+  </defs>
+  <g id="world-root">
+    <g id="background">
+        <rect id="world-bg-rect" x="0" y="0" width="1600" height="1000" fill="url(#world-gradient)" />
+    </g>
+    <g id="farWorld">
+      <g id="researchWorld">
+          <polygon class="face-left" points="434,165 470,183 470,279 434,261" />
+          <polygon class="face-right" points="470,183 506,165 506,261 470,279" />
+          <polygon id="world-deco-research-bar" class="face-top" points="470,147 506,165 470,183 434,165" />
+          <polygon class="face-left" points="292,200 320,214 320,278 292,264" />
+          <polygon class="face-right" points="320,214 348,200 348,264 320,278" />
+          <polygon id="world-deco-research-bar2" class="face-top" points="320,186 348,200 320,214 292,200" />
+          <polygon class="face-left" points="350,260 450,310 450,356 350,306" />
+          <polygon class="face-right" points="450,310 550,260 550,306 450,356" />
+          <polygon id="world-island-research" class="face-top surface" data-surface="world-island-research" data-gate="" points="450,210 550,260 450,310 350,260" />
+      </g>
+      <g id="architectureWorld">
+          <polygon class="face-left" points="1245,327.5 1345,377.5 1345,439.5 1245,389.5" />
+          <polygon class="face-right" points="1345,377.5 1445,327.5 1445,389.5 1345,439.5" />
+          <polygon id="world-island-architecture" class="face-top surface" data-surface="world-island-architecture" data-gate="" points="1345,277.5 1445,327.5 1345,377.5 1245,327.5" />
+          <polygon class="face-left" points="1308,385 1360,411 1360,521 1308,495" />
+          <polygon class="face-right" points="1360,411 1412,385 1412,495 1360,521" />
+          <polygon id="world-deco-arch-pillar" class="face-top" points="1360,359 1412,385 1360,411 1308,385" />
+          <polygon class="face-left" points="1276,265 1360,307 1360,323 1276,281" />
+          <polygon class="face-right" points="1360,307 1444,265 1444,281 1360,323" />
+          <polygon id="world-deco-arch-lintel" class="face-top" points="1360,223 1444,265 1360,307 1276,265" />
+      </g>
+      <g id="travelWorld">
+          <g id="world-deco-tree-1" class="deco-tree">
+          <rect class="tree-trunk" x="298.5" y="611" width="3" height="14" />
+          <polygon class="tree-crown" points="300,591 308,611 292,611" />
+          <polygon class="tree-crown" points="300,581 311,605 289,605" />
+          </g>
+          <g id="world-deco-tree-3" class="deco-tree">
+          <rect class="tree-trunk" x="218.95" y="635.2" width="2.0999999999999996" height="9.799999999999999" />
+          <polygon class="tree-crown" points="220,621.2 225.6,635.2 214.4,635.2" />
+          <polygon class="tree-crown" points="220,614.2 227.7,631 212.3,631" />
+          </g>
+          <polygon class="face-left" points="220,660 310,705 310,745 220,700" />
+          <polygon class="face-right" points="310,705 400,660 400,700 310,745" />
+          <polygon id="world-island-travel" class="face-top surface" data-surface="world-island-travel" data-gate="" points="310,615 400,660 310,705 220,660" />
+          <g id="world-deco-tree-2" class="deco-tree">
+          <rect class="tree-trunk" x="373.8" y="661.3" width="2.4000000000000004" height="11.200000000000001" />
+          <polygon class="tree-crown" points="375,645.3 381.4,661.3 368.6,661.3" />
+          <polygon class="tree-crown" points="375,637.3 383.8,656.5 366.2,656.5" />
+          </g>
+      </g>
+      <g id="fashionWorld">
+          <polygon class="face-left" points="1230,675 1320,720 1320,760 1230,715" />
+          <polygon class="face-right" points="1320,720 1410,675 1410,715 1320,760" />
+          <polygon id="world-island-fashion" class="face-top surface" data-surface="world-island-fashion" data-gate="" points="1320,630 1410,675 1320,720 1230,675" />
+          <polygon class="face-left" points="1410,660 1470,690 1470,760 1410,730" />
+          <polygon class="face-right" points="1470,690 1530,660 1530,730 1470,760" />
+          <polygon id="world-deco-fabric" class="face-top" points="1470,630 1530,660 1470,690 1410,660" />
+      </g>
+    </g>
+    <g id="farPaths">
+        <polygon class="bridge-lip" points="778,415 513,282.5 487,295.5 752,428" />
+<polygon id="world-bridge-research" class="bridge-ground surface" data-surface="world-bridge-research" data-gate="" data-axis="u" points="778,411 513,278.5 487,291.5 752,424" />
+        <polygon class="bridge-lip" points="987,497.5 1013,510.5 1308,363 1282,350" />
+<polygon id="world-bridge-architecture" class="bridge-ground surface" data-surface="world-bridge-architecture" data-gate="" data-axis="v" points="987,493.5 1013,506.5 1308,359 1282,346" />
+        <polygon class="bridge-lip" points="592,510 618,523 368,648 342,635" />
+<polygon id="world-bridge-travel" class="bridge-ground surface" data-surface="world-bridge-travel" data-gate="" data-axis="v" points="592,506 618,519 368,644 342,631" />
+        <polygon class="bridge-lip" points="1008,510 1288,650 1262,663 982,523" />
+<polygon id="world-bridge-fashion" class="bridge-ground surface" data-surface="world-bridge-fashion" data-gate="" data-axis="u" points="1008,506 1288,646 1262,659 982,519" />
+    </g>
+    <g id="centralWorld">
+      <g id="lowerArchitecture">
+          <polygon class="face-left" points="1035,367.5 1125,412.5 1125,450.5 1035,405.5" />
+          <polygon class="face-right" points="1125,412.5 1215,367.5 1215,405.5 1125,450.5" />
+          <polygon id="world-island-github" class="face-top surface" data-surface="world-island-github" data-gate="" points="1125,322.5 1215,367.5 1125,412.5 1035,367.5" />
+          <polygon class="face-left" points="932,421 992,451 992,469 932,439" />
+          <polygon class="face-right" points="992,451 1052,421 1052,439 992,469" />
+          <polygon id="world-island-github-landing" class="face-top surface" data-surface="world-island-github-landing" data-gate="" points="992,391 1052,421 992,451 932,421" />
+          <polygon class="face-left" points="410,430 500,475 500,505 410,460" />
+          <polygon class="face-right" points="500,475 590,430 590,460 500,505" />
+          <polygon id="world-island-about" class="face-top surface" data-surface="world-island-about" data-gate="" points="500,385 590,430 500,475 410,430" />
+          <polygon class="face-left" points="470,625 560,670 560,704 470,659" />
+          <polygon class="face-right" points="560,670 650,625 650,659 560,704" />
+          <polygon id="world-island-instagram" class="face-top surface" data-surface="world-island-instagram" data-gate="" points="560,580 650,625 560,670 470,625" />
+      </g>
+      <g id="mainIsland">
+          <polygon class="face-left" points="590,505 800,610 800,690 590,585" />
+          <polygon class="face-right" points="800,610 1010,505 1010,585 800,690" />
+          <polygon id="world-island-central" class="face-top surface" data-surface="world-island-central" data-gate="" points="800,400 1010,505 800,610 590,505" />
+      </g>
+      <g id="middleArchitecture">
+          <polygon class="face-left" points="736,420 800,452 800,524 736,492" />
+          <polygon class="face-right" points="800,452 864,420 864,492 800,524" />
+          <polygon id="world-building-hub" class="face-top" points="800,388 864,420 800,452 736,420" />
+      </g>
+      <g id="upperArchitecture">
+          <polygon class="face-left" points="704,233 800,281 800,321 704,273" />
+          <polygon class="face-right" points="800,281 896,233 896,273 800,321" />
+          <polygon id="world-deco-upper-block" class="face-top" points="800,185 896,233 800,281 704,233" />
+          <rect id="world-deco-upper-block-opening" class="upper-opening" x="749.60" y="244.00" width="100.80" height="14" rx="3" />
+      </g>
+      <g id="floatingBlocks">
+      </g>
+    </g>
+    <g id="nearPaths">
+        <path id="world-path-about-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 733.00 528.50" pointer-events="none" />
+        <path id="world-path-instagram-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 758.00 556.00" pointer-events="none" />
+        <path id="world-path-github-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 820.00 525.00" pointer-events="none" />
+        <path id="world-path-research-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 735.00 517.50" pointer-events="none" />
+        <path id="world-path-architecture-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 860.00 545.00" pointer-events="none" />
+        <path id="world-path-travel-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 750.00 560.00" pointer-events="none" />
+        <path id="world-path-fashion-0" class="path-ribbon" data-requires="" d="M 800.00 555.00 L 850.00 550.00" pointer-events="none" />
+        <path id="world-path-about-1" class="path-ribbon" data-requires="" d="M 733.00 528.50 L 672.00 509.00" pointer-events="none" />
+        <path id="world-path-instagram-1" class="path-ribbon" data-requires="" d="M 758.00 556.00 L 715.00 557.50" pointer-events="none" />
+        <path id="world-path-github-1" class="path-ribbon" data-requires="" d="M 820.00 525.00 L 872.00 481.00" pointer-events="none" />
+        <path id="world-path-research-1" class="path-ribbon" data-requires="" d="M 735.00 517.50 L 710.00 480.00" pointer-events="none" />
+        <path id="world-path-architecture-1" class="path-ribbon" data-requires="" d="M 860.00 545.00 L 930.00 520.00" pointer-events="none" />
+        <path id="world-path-travel-1" class="path-ribbon" data-requires="" d="M 750.00 560.00 L 700.00 555.00" pointer-events="none" />
+        <path id="world-path-fashion-1" class="path-ribbon" data-requires="" d="M 850.00 550.00 L 960.00 525.00" pointer-events="none" />
+        <path id="world-path-about-2" class="path-ribbon" data-requires="" d="M 672.00 509.00 L 622.00 491.00" pointer-events="none" />
+        <path id="world-path-instagram-2" class="path-ribbon" data-requires="" d="M 715.00 557.50 L 697.00 556.50" pointer-events="none" />
+        <path id="world-path-github-2" class="path-ribbon" data-requires="" d="M 872.00 481.00 L 903.00 453.50" pointer-events="none" />
+        <path id="world-path-research-2" class="path-ribbon" data-requires="" d="M 710.00 480.00 L 717.00 443.50" pointer-events="none" />
+        <path id="world-path-architecture-2" class="path-ribbon" data-requires="" d="M 930.00 520.00 L 998.00 501.00" pointer-events="none" />
+        <path id="world-path-travel-2" class="path-ribbon" data-requires="" d="M 700.00 555.00 L 607.00 511.50" pointer-events="none" />
+        <path id="world-path-fashion-2" class="path-ribbon" data-requires="" d="M 960.00 525.00 L 995.00 512.50" pointer-events="none" />
+        <path id="world-path-about-3" class="path-ribbon is-gated" data-requires="world-puzzle-about" data-hidden="true" d="M 622.00 491.00 L 584.00 472.00" pointer-events="none" />
+        <path id="world-path-instagram-3" class="path-ribbon is-gated" data-requires="world-puzzle-instagram" data-hidden="true" d="M 697.00 556.50 L 650.00 580.00" pointer-events="none" />
+        <path id="world-path-github-3" class="path-ribbon is-gated" data-requires="world-puzzle-github-a" data-hidden="true" d="M 903.00 453.50 L 950.00 430.00" pointer-events="none" />
+        <path id="world-path-research-3" class="path-ribbon" data-requires="" d="M 717.00 443.50 L 765.00 417.50" pointer-events="none" />
+        <path id="world-path-architecture-3" class="path-ribbon" data-requires="" d="M 998.00 501.00 L 1145.00 427.50" pointer-events="none" />
+        <path id="world-path-travel-3" class="path-ribbon" data-requires="" d="M 607.00 511.50 L 480.00 575.00" pointer-events="none" />
+        <path id="world-path-fashion-3" class="path-ribbon" data-requires="" d="M 995.00 512.50 L 1130.00 580.00" pointer-events="none" />
+        <path id="world-path-about-4" class="path-ribbon is-gated" data-requires="world-puzzle-about" data-hidden="true" d="M 584.00 472.00 L 545.00 452.50" pointer-events="none" />
+        <path id="world-path-instagram-4" class="path-ribbon is-gated" data-requires="world-puzzle-instagram" data-hidden="true" d="M 650.00 580.00 L 605.00 602.50" pointer-events="none" />
+        <path id="world-path-github-4" class="path-ribbon" data-requires="" d="M 950.00 430.00 L 992.00 421.00" pointer-events="none" />
+        <path id="world-path-research-4" class="path-ribbon" data-requires="" d="M 765.00 417.50 L 670.00 370.00" pointer-events="none" />
+        <path id="world-path-architecture-4" class="path-ribbon" data-requires="" d="M 1145.00 427.50 L 1295.00 352.50" pointer-events="none" />
+        <path id="world-path-travel-4" class="path-ribbon" data-requires="" d="M 480.00 575.00 L 355.00 637.50" pointer-events="none" />
+        <path id="world-path-fashion-4" class="path-ribbon" data-requires="" d="M 1130.00 580.00 L 1275.00 652.50" pointer-events="none" />
+        <path id="world-path-about-5" class="path-ribbon" data-requires="" d="M 545.00 452.50 L 500.00 438.00" pointer-events="none" />
+        <path id="world-path-instagram-5" class="path-ribbon" data-requires="" d="M 605.00 602.50 L 560.00 633.00" pointer-events="none" />
+        <path id="world-path-github-5" class="path-ribbon" data-requires="" d="M 992.00 421.00 L 1035.00 412.50" pointer-events="none" />
+        <path id="world-path-research-5" class="path-ribbon" data-requires="" d="M 670.00 370.00 L 570.00 320.00" pointer-events="none" />
+        <path id="world-path-architecture-5" class="path-ribbon" data-requires="" d="M 1295.00 352.50 L 1345.00 333.50" pointer-events="none" />
+        <path id="world-path-travel-5" class="path-ribbon" data-requires="" d="M 355.00 637.50 L 310.00 666.00" pointer-events="none" />
+        <path id="world-path-fashion-5" class="path-ribbon" data-requires="" d="M 1275.00 652.50 L 1320.00 681.00" pointer-events="none" />
+        <path id="world-path-github-6" class="path-ribbon is-gated" data-requires="world-puzzle-github-b" data-hidden="true" d="M 1035.00 412.50 L 1080.00 390.00" pointer-events="none" />
+        <path id="world-path-research-6" class="path-ribbon" data-requires="" d="M 570.00 320.00 L 500.00 285.00" pointer-events="none" />
+        <path id="world-path-github-7" class="path-ribbon" data-requires="" d="M 1080.00 390.00 L 1125.00 375.50" pointer-events="none" />
+        <path id="world-path-research-7" class="path-ribbon" data-requires="" d="M 500.00 285.00 L 450.00 266.00" pointer-events="none" />
+    </g>
+    <g id="puzzles">
+      <g id="aboutPuzzle">
+          <polygon class="bridge-lip" points="633,487.5 558,450 532,463 607,500.5" />
+<polygon id="world-bridge-about" class="bridge-ground surface" data-surface="world-bridge-about" data-gate="world-puzzle-about" data-state="initial" data-axis="u" points="633,483.5 558,446 532,459 607,496.5" />
+          <g id="world-mechanism-about" class="mechanism" data-mechanism="world-puzzle-about" data-anchor="677.00,490.50" role="button" tabindex="0" aria-label="Rotate the bridge">
+          <polygon class="mechanism-shadow" points="677,481.5 705,495.5 677,509.5 649,495.5" />
+          <polygon class="mechanism-base" points="677,474.5 705,488.5 677,502.5 649,488.5" />
+          <rect class="mechanism-stem" x="674.50" y="475.50" width="5" height="13" rx="2" />
+          <circle class="mechanism-pivot" cx="677" cy="490.50" r="7.5" />
+          <circle class="mechanism-core" cx="677" cy="474.50" r="4" />
+          </g>
+      </g>
+      <g id="instagramPuzzle">
+          <g id="world-mechanism-instagram" class="mechanism" data-mechanism="world-puzzle-instagram" data-anchor="748.00,559.00" role="button" tabindex="0" aria-label="Fold the bridge">
+          <polygon class="mechanism-shadow" points="748,550 776,564 748,578 720,564" />
+          <polygon class="mechanism-base" points="748,543 776,557 748,571 720,557" />
+          <rect class="mechanism-stem" x="745.50" y="544.00" width="5" height="13" rx="2" />
+          <circle class="mechanism-pivot" cx="748" cy="559.00" r="7.5" />
+          <circle class="mechanism-core" cx="748" cy="543.00" r="4" />
+          </g>
+          <polygon class="bridge-lip" points="682,555 708,568 618,613 592,600" />
+<polygon id="world-bridge-instagram" class="bridge-ground surface" data-surface="world-bridge-instagram" data-gate="world-puzzle-instagram" data-state="initial" data-axis="v" points="682,551 708,564 618,609 592,596" />
+      </g>
+      <g id="githubPuzzle">
+          <polygon class="bridge-lip" points="1022,410 1048,423 1093,400.5 1067,387.5" />
+<polygon id="world-bridge-github-b" class="bridge-ground surface" data-surface="world-bridge-github-b" data-gate="world-puzzle-github-b" data-state="initial" data-axis="v" points="1022,406 1048,419 1093,396.5 1067,383.5" />
+          <g id="world-mechanism-github-b" class="mechanism" data-mechanism="world-puzzle-github-b" data-anchor="992.00,423.00" role="button" tabindex="0" aria-label="Rotate the second bridge">
+          <polygon class="mechanism-shadow" points="992,414 1020,428 992,442 964,428" />
+          <polygon class="mechanism-base" points="992,407 1020,421 992,435 964,421" />
+          <rect class="mechanism-stem" x="989.50" y="408.00" width="5" height="13" rx="2" />
+          <circle class="mechanism-pivot" cx="992" cy="423.00" r="7.5" />
+          <circle class="mechanism-core" cx="992" cy="407.00" r="4" />
+          </g>
+          <polygon class="bridge-lip" points="892,450 918,463 963,440.5 937,427.5" />
+<polygon id="world-bridge-github-a" class="bridge-ground surface" data-surface="world-bridge-github-a" data-gate="world-puzzle-github-a" data-state="initial" data-axis="v" points="892,446 918,459 963,436.5 937,423.5" />
+          <g id="world-mechanism-github-a" class="mechanism" data-mechanism="world-puzzle-github-a" data-anchor="928.00,475.00" role="button" tabindex="0" aria-label="Rotate the first bridge">
+          <polygon class="mechanism-shadow" points="928,466 956,480 928,494 900,480" />
+          <polygon class="mechanism-base" points="928,459 956,473 928,487 900,473" />
+          <rect class="mechanism-stem" x="925.50" y="460.00" width="5" height="13" rx="2" />
+          <circle class="mechanism-pivot" cx="928" cy="475.00" r="7.5" />
+          <circle class="mechanism-core" cx="928" cy="459.00" r="4" />
+          </g>
+      </g>
+    </g>
+    <g id="portals">
+        <g id="world-portal-research" class="portal" data-portal="research" data-anchor="450.00,266.00" role="link" tabindex="0" aria-label="Research world">
+        <ellipse class="portal-shadow" cx="450" cy="269" rx="17.35" ry="6.41" />
+        <path class="portal-frame" d="M 431.14 266 L 431.14 230.74 A 18.86 18.86 0 0 1 468.86 230.74 L 468.86 266 Z" />
+        <path class="portal-inner" d="M 436.88 265 L 436.88 233.04 A 13.12 13.12 0 0 1 463.12 233.04 L 463.12 265 Z" />
+        <circle class="portal-core" cx="450" cy="237.86" r="3.77" />
+        </g>
+        <g id="world-portal-architecture" class="portal" data-portal="architecture" data-anchor="1345.00,333.50" role="link" tabindex="0" aria-label="Architecture world">
+        <ellipse class="portal-shadow" cx="1345" cy="336.5" rx="17.35" ry="6.41" />
+        <path class="portal-frame" d="M 1326.14 333.5 L 1326.14 298.24 A 18.86 18.86 0 0 1 1363.86 298.24 L 1363.86 333.5 Z" />
+        <path class="portal-inner" d="M 1331.88 332.5 L 1331.88 300.54 A 13.12 13.12 0 0 1 1358.12 300.54 L 1358.12 332.5 Z" />
+        <circle class="portal-core" cx="1345" cy="305.36" r="3.77" />
+        </g>
+        <g id="world-portal-github" class="portal" data-portal="github" data-anchor="1125.00,375.50" role="link" tabindex="0" aria-label="GitHub, opens in a new tab">
+        <ellipse class="portal-shadow" cx="1125" cy="378.5" rx="21.16" ry="7.82" />
+        <path class="portal-frame" d="M 1102 375.5 L 1102 332.5 A 23 23 0 0 1 1148 332.5 L 1148 375.5 Z" />
+        <path class="portal-inner" d="M 1109 374.5 L 1109 335.3 A 16 16 0 0 1 1141 335.3 L 1141 374.5 Z" />
+        <circle class="portal-core" cx="1125" cy="341.18" r="4.60" />
+        </g>
+        <g id="world-portal-about" class="portal" data-portal="about" data-anchor="500.00,438.00" role="link" tabindex="0" aria-label="About me">
+        <ellipse class="portal-shadow" cx="500" cy="441" rx="21.16" ry="7.82" />
+        <path class="portal-frame" d="M 477 438 L 477 395 A 23 23 0 0 1 523 395 L 523 438 Z" />
+        <path class="portal-inner" d="M 484 437 L 484 397.8 A 16 16 0 0 1 516 397.8 L 516 437 Z" />
+        <circle class="portal-core" cx="500" cy="403.68" r="4.60" />
+        </g>
+        <g id="world-portal-instagram" class="portal" data-portal="instagram" data-anchor="560.00,633.00" role="link" tabindex="0" aria-label="Instagram, opens in a new tab">
+        <ellipse class="portal-shadow" cx="560" cy="636" rx="20.10" ry="7.43" />
+        <path class="portal-frame" d="M 538.15 633 L 538.15 592.15 A 21.85 21.85 0 0 1 581.85 592.15 L 581.85 633 Z" />
+        <path class="portal-inner" d="M 544.8 632 L 544.8 594.81 A 15.2 15.2 0 0 1 575.2 594.81 L 575.2 632 Z" />
+        <circle class="portal-core" cx="560" cy="600.40" r="4.37" />
+        </g>
+        <g id="world-portal-travel" class="portal" data-portal="travel" data-anchor="310.00,666.00" role="link" tabindex="0" aria-label="Travel world">
+        <ellipse class="portal-shadow" cx="310" cy="669" rx="17.35" ry="6.41" />
+        <path class="portal-frame" d="M 291.14 666 L 291.14 630.74 A 18.86 18.86 0 0 1 328.86 630.74 L 328.86 666 Z" />
+        <path class="portal-inner" d="M 296.88 665 L 296.88 633.04 A 13.12 13.12 0 0 1 323.12 633.04 L 323.12 665 Z" />
+        <circle class="portal-core" cx="310" cy="637.86" r="3.77" />
+        </g>
+        <g id="world-portal-fashion" class="portal" data-portal="fashion" data-anchor="1320.00,681.00" role="link" tabindex="0" aria-label="Fashion world">
+        <ellipse class="portal-shadow" cx="1320" cy="684" rx="17.35" ry="6.41" />
+        <path class="portal-frame" d="M 1301.14 681 L 1301.14 645.74 A 18.86 18.86 0 0 1 1338.86 645.74 L 1338.86 681 Z" />
+        <path class="portal-inner" d="M 1306.88 680 L 1306.88 648.04 A 13.12 13.12 0 0 1 1333.12 648.04 L 1333.12 680 Z" />
+        <circle class="portal-core" cx="1320" cy="652.86" r="3.77" />
+        </g>
+    </g>
+    <g id="character">
+      <g id="world-character" class="character" transform="translate(800.0 555.0)">
+        <g id="world-character-facing">
+          <ellipse class="character-shadow" cx="0" cy="2" rx="13" ry="4.6" />
+          <rect class="character-leg character-leg-a" x="-4.4" y="-14" width="3.4" height="14" rx="1.6" />
+          <rect class="character-leg character-leg-b" x="1" y="-14" width="3.4" height="14" rx="1.6" />
+          <path class="character-body" d="M 0 -31 L 0 -12" stroke-linecap="round" stroke-width="9" />
+          <circle class="character-head" cx="0" cy="-36.5" r="5.8" />
+        </g>
+      </g>
+    </g>
+    <g id="walkNodes">
+      <g id="world-node-markers" opacity="0" pointer-events="none" aria-hidden="true">
+        <circle id="world-node-home" class="walk-node" data-route="home" data-index="0" cx="800.00" cy="555.00" r="1.5" />
+        <circle id="world-node-about-1" class="walk-node" data-route="about" data-index="1" cx="733.00" cy="528.50" r="1.5" />
+        <circle id="world-node-about-2" class="walk-node" data-route="about" data-index="2" cx="672.00" cy="509.00" r="1.5" />
+        <circle id="world-node-about-3" class="walk-node" data-route="about" data-index="3" cx="622.00" cy="491.00" r="1.5" />
+        <circle id="world-node-about-4" class="walk-node" data-route="about" data-index="4" cx="584.00" cy="472.00" r="1.5" />
+        <circle id="world-node-about-5" class="walk-node" data-route="about" data-index="5" cx="545.00" cy="452.50" r="1.5" />
+        <circle id="world-node-about-6" class="walk-node" data-route="about" data-index="6" cx="500.00" cy="438.00" r="1.5" />
+        <circle id="world-node-instagram-1" class="walk-node" data-route="instagram" data-index="1" cx="758.00" cy="556.00" r="1.5" />
+        <circle id="world-node-instagram-2" class="walk-node" data-route="instagram" data-index="2" cx="715.00" cy="557.50" r="1.5" />
+        <circle id="world-node-instagram-3" class="walk-node" data-route="instagram" data-index="3" cx="697.00" cy="556.50" r="1.5" />
+        <circle id="world-node-instagram-4" class="walk-node" data-route="instagram" data-index="4" cx="650.00" cy="580.00" r="1.5" />
+        <circle id="world-node-instagram-5" class="walk-node" data-route="instagram" data-index="5" cx="605.00" cy="602.50" r="1.5" />
+        <circle id="world-node-instagram-6" class="walk-node" data-route="instagram" data-index="6" cx="560.00" cy="633.00" r="1.5" />
+        <circle id="world-node-github-1" class="walk-node" data-route="github" data-index="1" cx="820.00" cy="525.00" r="1.5" />
+        <circle id="world-node-github-2" class="walk-node" data-route="github" data-index="2" cx="872.00" cy="481.00" r="1.5" />
+        <circle id="world-node-github-3" class="walk-node" data-route="github" data-index="3" cx="903.00" cy="453.50" r="1.5" />
+        <circle id="world-node-github-4" class="walk-node" data-route="github" data-index="4" cx="950.00" cy="430.00" r="1.5" />
+        <circle id="world-node-github-5" class="walk-node" data-route="github" data-index="5" cx="992.00" cy="421.00" r="1.5" />
+        <circle id="world-node-github-6" class="walk-node" data-route="github" data-index="6" cx="1035.00" cy="412.50" r="1.5" />
+        <circle id="world-node-github-7" class="walk-node" data-route="github" data-index="7" cx="1080.00" cy="390.00" r="1.5" />
+        <circle id="world-node-github-8" class="walk-node" data-route="github" data-index="8" cx="1125.00" cy="375.50" r="1.5" />
+        <circle id="world-node-research-1" class="walk-node" data-route="research" data-index="1" cx="735.00" cy="517.50" r="1.5" />
+        <circle id="world-node-research-2" class="walk-node" data-route="research" data-index="2" cx="710.00" cy="480.00" r="1.5" />
+        <circle id="world-node-research-3" class="walk-node" data-route="research" data-index="3" cx="717.00" cy="443.50" r="1.5" />
+        <circle id="world-node-research-4" class="walk-node" data-route="research" data-index="4" cx="765.00" cy="417.50" r="1.5" />
+        <circle id="world-node-research-5" class="walk-node" data-route="research" data-index="5" cx="670.00" cy="370.00" r="1.5" />
+        <circle id="world-node-research-6" class="walk-node" data-route="research" data-index="6" cx="570.00" cy="320.00" r="1.5" />
+        <circle id="world-node-research-7" class="walk-node" data-route="research" data-index="7" cx="500.00" cy="285.00" r="1.5" />
+        <circle id="world-node-research-8" class="walk-node" data-route="research" data-index="8" cx="450.00" cy="266.00" r="1.5" />
+        <circle id="world-node-architecture-1" class="walk-node" data-route="architecture" data-index="1" cx="860.00" cy="545.00" r="1.5" />
+        <circle id="world-node-architecture-2" class="walk-node" data-route="architecture" data-index="2" cx="930.00" cy="520.00" r="1.5" />
+        <circle id="world-node-architecture-3" class="walk-node" data-route="architecture" data-index="3" cx="998.00" cy="501.00" r="1.5" />
+        <circle id="world-node-architecture-4" class="walk-node" data-route="architecture" data-index="4" cx="1145.00" cy="427.50" r="1.5" />
+        <circle id="world-node-architecture-5" class="walk-node" data-route="architecture" data-index="5" cx="1295.00" cy="352.50" r="1.5" />
+        <circle id="world-node-architecture-6" class="walk-node" data-route="architecture" data-index="6" cx="1345.00" cy="333.50" r="1.5" />
+        <circle id="world-node-travel-1" class="walk-node" data-route="travel" data-index="1" cx="750.00" cy="560.00" r="1.5" />
+        <circle id="world-node-travel-2" class="walk-node" data-route="travel" data-index="2" cx="700.00" cy="555.00" r="1.5" />
+        <circle id="world-node-travel-3" class="walk-node" data-route="travel" data-index="3" cx="607.00" cy="511.50" r="1.5" />
+        <circle id="world-node-travel-4" class="walk-node" data-route="travel" data-index="4" cx="480.00" cy="575.00" r="1.5" />
+        <circle id="world-node-travel-5" class="walk-node" data-route="travel" data-index="5" cx="355.00" cy="637.50" r="1.5" />
+        <circle id="world-node-travel-6" class="walk-node" data-route="travel" data-index="6" cx="310.00" cy="666.00" r="1.5" />
+        <circle id="world-node-fashion-1" class="walk-node" data-route="fashion" data-index="1" cx="850.00" cy="550.00" r="1.5" />
+        <circle id="world-node-fashion-2" class="walk-node" data-route="fashion" data-index="2" cx="960.00" cy="525.00" r="1.5" />
+        <circle id="world-node-fashion-3" class="walk-node" data-route="fashion" data-index="3" cx="995.00" cy="512.50" r="1.5" />
+        <circle id="world-node-fashion-4" class="walk-node" data-route="fashion" data-index="4" cx="1130.00" cy="580.00" r="1.5" />
+        <circle id="world-node-fashion-5" class="walk-node" data-route="fashion" data-index="5" cx="1275.00" cy="652.50" r="1.5" />
+        <circle id="world-node-fashion-6" class="walk-node" data-route="fashion" data-index="6" cx="1320.00" cy="681.00" r="1.5" />
+      </g>
+    </g>
+    <g id="foreground">
+        <g id="world-mask-gate" class="foreground-mask" pointer-events="none" aria-hidden="true">
+        <polygon class="mask-left" points="588,472 606,481 606,573 588,564" />
+        <polygon class="mask-right" points="606,481 624,472 624,564 606,573" />
+        <polygon class="mask-top" points="606,463 624,472 606,481 588,472" />
+        </g>
+        <g id="world-mask-bl" class="foreground-mask" pointer-events="none" aria-hidden="true">
+        <polygon class="mask-left" points="-50,1030 150,1130 150,1170 -50,1070" />
+        <polygon class="mask-right" points="150,1130 350,1030 350,1070 150,1170" />
+        <polygon class="mask-top" points="150,930 350,1030 150,1130 -50,1030" />
+        </g>
+        <g id="world-mask-bc" class="foreground-mask" pointer-events="none" aria-hidden="true">
+        <polygon class="mask-left" points="560,1060 800,1180 800,1220 560,1100" />
+        <polygon class="mask-right" points="800,1180 1040,1060 1040,1100 800,1220" />
+        <polygon class="mask-top" points="800,940 1040,1060 800,1180 560,1060" />
+        </g>
+        <g id="world-mask-br" class="foreground-mask" pointer-events="none" aria-hidden="true">
+        <polygon class="mask-left" points="1220,1040 1400,1130 1400,1170 1220,1080" />
+        <polygon class="mask-right" points="1400,1130 1580,1040 1580,1080 1400,1170" />
+        <polygon class="mask-top" points="1400,950 1580,1040 1400,1130 1220,1040" />
+        </g>
+    </g>
+    <g id="effects">
+    </g>
+  </g>
+</svg>
