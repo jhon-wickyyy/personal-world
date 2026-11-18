@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com</loc></url>
-  <url><loc>https://example.com/about</loc></url>
-  <url><loc>https://example.com/architecture</loc></url>
-  <url><loc>https://example.com/architecture/alumni-hall</loc></url>
-  <url><loc>https://example.com/architecture/diaoyutai</loc></url>
-  <url><loc>https://example.com/travel</loc></url>
-  <url><loc>https://example.com/research</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io/about</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io/architecture</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io/architecture/alumni-hall</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io/architecture/diaoyutai</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io/travel</loc></url>
+  <url><loc>https://jhon-wickyyy.github.io/research</loc></url>
 </urlset>
