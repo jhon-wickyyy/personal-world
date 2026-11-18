@@ -18,3 +18,6 @@ Thumbs.db
 
 # archives
 *.zip
+
+# GitHub Pages deploy clone
+/jhon-wickyyy.github.io/
